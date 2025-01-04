@@ -1,0 +1,25 @@
+<!-- Save this as dpb-favicon.svg -->
+<svg
+    version="1.1"
+    width="32"
+    height="32"
+    viewBox="0 0 32 32"
+    xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- Purple Circle Background -->
+  <circle cx="16" cy="16" r="16" fill="#29235C" />
+
+  <!-- DPB Text Monogram -->
+  <text
+      x="16"
+      y="19"
+      font-size="14"
+      fill="#fff"
+      text-anchor="middle"
+      alignment-baseline="middle"
+      font-family="Arial, sans-serif"
+      font-weight="700"
+  >
+    DPB
+  </text>
+</svg>

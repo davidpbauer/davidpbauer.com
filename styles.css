@@ -1,0 +1,191 @@
+/* ========== RESET / BASE STYLES ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html,
+  body {
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+    color: #333;
+  }
+  
+  /* ========== BODY BACKGROUND ========== */
+  body {
+    background: linear-gradient(135deg, #29235C 0%, #4C418F 100%);
+  }
+  
+  /* ========== HEADER ========== */
+  .site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  .site-header .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Optional monogram styling */
+  .monogram {
+    width: 48px;
+    height: 48px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    margin-right: 1rem;
+  }
+  
+  /* Navigation styles */
+  .site-header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  /* Generic nav link styling */
+  .site-header nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  
+  .site-header nav a:hover,
+  .site-header nav a:focus {
+    color: #FF4C60; /* accent color on hover */
+  }
+  
+  /* ========== LINKEDIN ICON LINK ========== */
+  .linkedin-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem; /* space between icon & text */
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  
+  .linkedin-link svg {
+    width: 20px;  /* Adjust as you like: 20px, 24px, etc. */
+    height: auto;
+    vertical-align: middle;
+    fill: currentColor;
+  }
+  
+  .linkedin-link:hover,
+  .linkedin-link:focus {
+    color: #FF4C60;
+  }
+  
+  /* ========== HERO SECTION ========== */
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem;
+  }
+  
+  .hero-content {
+    max-width: 700px;
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+  
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 1rem;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 3px solid #fff;
+  }
+  
+  .profile-pic img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .hero-content .name {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .hero-content .subtitle {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #eaeaea;
+    margin-bottom: 0.25rem;
+  }
+  
+  .hero-content .location {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #ccc;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-content .tagline {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-top: 1rem;
+    color: #fff;
+  }
+  
+  /* ========== FOOTER ========== */
+  .site-footer {
+    text-align: center;
+    padding: 1rem;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  /* ========== AI-GENERATED BADGE ========== */
+  .ai-badge {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    backdrop-filter: blur(5px);
+    /* Feel free to adjust styling, color, transparency, etc. */
+  }
+  
+  .ai-badge:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+  
+  /* ========== MEDIA QUERIES ========== */
+  @media (max-width: 600px) {
+    .hero-content {
+      padding: 1.5rem;
+    }
+    
+    .hero-content .name {
+      font-size: 1.75rem;
+    }
+  }
+  
