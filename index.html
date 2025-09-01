@@ -90,8 +90,9 @@
     }
       /* Avatar & hero layout */
     .hero-head { display: grid; gap: 16px; }
-    .avatar { width: var(--avatar-size); height: var(--avatar-size); border-radius: 50%; object-fit: cover; border: 2px solid var(--border); box-shadow: 0 8px 24px rgba(0,0,0,0.35); justify-self: end; image-rendering: -webkit-optimize-contrast; }
-    @media (min-width: 820px) { .hero-head { grid-template-columns: 1fr 180px; align-items: center; } }
+    .profile-pic { width: 160px; height: 160px; margin: 0 auto 1rem; overflow: hidden; border-radius: 50%; border: 3px solid #fff; }
+    .profile-pic img { width: 100%; height: auto; display: block; }
+    @media (min-width: 820px) { .hero-head { grid-template-columns: 1fr 180px; align-items: center; } .profile-pic img { justify-self: end; } }
 
     /* Improve skip link */
     .visually-hidden { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
@@ -136,7 +137,9 @@
         </a>
       </div>
         </div>
-        <img class="avatar" src="profile.jpg?v=2" srcset="profile.jpg?v=2 1x, profile.jpg?v=2 2x, profile.jpg?v=2 3x" sizes="160px" alt="Portrait of David P. Bauer" width="160" height="160" loading="eager" />
+        <div class="profile-pic">
+          <img src="profile.jpg" sizes="160px" alt="Portrait of David P. Bauer" width="160" height="160" loading="eager" />
+        </div>
       </div>
     </section>
 
