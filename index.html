@@ -3,14 +3,25 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>David P. Bauer — Higher‑Education Technology Leader</title>
-  <meta name="description" content="David P. Bauer — higher‑education technology leader focused on academic technologies, governance, and responsible adoption of emerging tech." />
+  <title>David P. Bauer — Higher‑Education Technology Executive</title>
+  <meta name="description" content="David P. Bauer — Executive Director of Academic, Research, and Emerging Technologies at the University of Dayton. Academic and research systems, AI strategy and governance, and open source leadership in higher education." />
   <link rel="canonical" href="https://davidpbauer.com/" />
-  <meta property="og:title" content="David P. Bauer — Higher‑Education Technology Leader" />
-  <meta property="og:description" content="Academic technologies, organizational change, and responsible AI in higher education." />
+  <meta property="og:title" content="David P. Bauer — Higher‑Education Technology Executive" />
+  <meta property="og:description" content="Academic and research technologies, organizational change, AI strategy and governance, and open source leadership in higher education." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://davidpbauer.com/" />
-  <meta name="theme-color" content="#0f172a" />
+  <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)" />
+  <meta name="author" content="David P. Bauer" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:image" content="https://davidpbauer.com/profile-640.jpg" />
+  <meta property="og:image:width" content="640" />
+  <meta property="og:image:height" content="640" />
+  <meta property="og:image:alt" content="Portrait of David P. Bauer" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="David P. Bauer — Higher‑Education Technology Executive" />
+  <meta name="twitter:description" content="Academic and research technologies, AI strategy and governance, and open source leadership in higher education." />
+  <meta name="twitter:image" content="https://davidpbauer.com/profile-640.jpg" />
     <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -24,12 +35,44 @@
       --accent: #60a5fa;    /* links & highlights */
       --accent-2: #34d399;  /* subtle accents */
       --border: rgba(255,255,255,0.08);
+      --panel-2: #111827;   /* buttons */
+      --panel-3: #0b1220;   /* button hover */
+      --on-accent: #0a0f1c; /* text on accent fill */
+      --hover: rgba(255,255,255,0.06);
+      --chip: rgba(255,255,255,0.06);
+      --header-bg-a: rgba(15,23,42,0.95);
+      --header-bg-b: rgba(15,23,42,0.85);
+      --avatar-border: #ffffff;
       --maxw: 980px;
       --avatar-size: 160px; /* default avatar size; will auto-clamp if image is smaller */
     }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f8fafc;
+        --panel: #ffffff;
+        --text: #0f172a;
+        --muted: #475569;
+        --accent: #1d4ed8;
+        --accent-2: #047857;
+        --border: rgba(15,23,42,0.12);
+        --panel-2: #ffffff;
+        --panel-3: #f1f5f9;
+        --on-accent: #ffffff;
+        --hover: rgba(15,23,42,0.06);
+        --chip: rgba(15,23,42,0.04);
+        --header-bg-a: rgba(255,255,255,0.95);
+        --header-bg-b: rgba(255,255,255,0.85);
+        --avatar-border: #e2e8f0;
+      }
+    }
+
     /* Basic reset */
     *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
     body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; background: var(--bg); color: var(--text); line-height: 1.55; }
 
     a { color: var(--accent); text-decoration: none; }
@@ -37,20 +80,20 @@
 
     /* Layout */
     .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
-    header { position: sticky; top: 0; z-index: 20; background: linear-gradient(180deg, rgba(15,23,42,0.95), rgba(15,23,42,0.85)); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+    header { position: sticky; top: 0; z-index: 20; background: linear-gradient(180deg, var(--header-bg-a), var(--header-bg-b)); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
     .nav { display: flex; align-items: center; justify-content: space-between; height: 60px; position: relative; }
     .brand { font-weight: 700; letter-spacing: 0.2px; }
     nav ul { display: flex; gap: 16px; list-style: none; margin: 0; padding: 0; }
     nav a { padding: 6px 10px; border-radius: 8px; }
-    nav a:hover { background: rgba(255,255,255,0.06); text-decoration: none; }
+    nav a:hover { background: var(--hover); text-decoration: none; }
 
     .hero { padding: 64px 0 28px; display: grid; gap: 14px; }
     .hero h1 { margin: 0; font-size: clamp(28px, 5vw, 44px); line-height: 1.1; }
     .tagline { color: var(--muted); font-size: clamp(16px, 2.4vw, 18px); }
     .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
-    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 999px; border: 1px solid var(--border); background: #111827; color: var(--text); font-weight: 600; }
-    .btn:hover { background: #0b1220; text-decoration: none; }
-    .btn.primary { background: var(--accent); color: #0a0f1c; border-color: transparent; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 999px; border: 1px solid var(--border); background: var(--panel-2); color: var(--text); font-weight: 600; }
+    .btn:hover { background: var(--panel-3); text-decoration: none; }
+    .btn.primary { background: var(--accent); color: var(--on-accent); border-color: transparent; }
     .btn.primary:hover { filter: brightness(1.05); }
 
     section { padding: 28px 0; border-top: 1px solid var(--border); }
@@ -64,12 +107,12 @@
     .list { display: grid; gap: 10px; }
     .list li { margin-left: 18px; }
     ul.inline { display: flex; flex-wrap: wrap; gap: 8px 12px; list-style: none; padding: 0; margin: 0; }
-    ul.inline li { background: rgba(255,255,255,0.06); border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; }
+    ul.inline li { background: var(--chip); border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; }
 
     /* Experience */
     .xp { display: grid; gap: 10px; }
     .role { display: grid; gap: 4px; }
-    .role h3 { font-size: 16px; margin: 0; }
+    .role h3, .role h4 { font-size: 16px; margin: 0; }
     .role .meta { color: var(--muted); font-size: 14px; }
     .bullets { margin: 8px 0 0 0; padding-left: 18px; }
 
@@ -90,18 +133,20 @@
     }
       /* Avatar & hero layout */
     .hero-head { display: grid; gap: 16px; }
-    .profile-pic { width: 160px; height: 160px; margin: 0 auto 1rem; overflow: hidden; border-radius: 50%; border: 3px solid #fff; }
+    .profile-pic { width: 160px; height: 160px; margin: 0 auto 1rem; overflow: hidden; border-radius: 50%; border: 3px solid var(--avatar-border); }
     .profile-pic img { width: 100%; height: auto; display: block; }
     @media (min-width: 820px) { .hero-head { grid-template-columns: 1fr 180px; align-items: center; } .profile-pic img { justify-self: end; } }
 
     /* Improve skip link */
     .visually-hidden { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    .skip-link:focus { position: fixed !important; top: 10px; left: 10px; width: auto; height: auto; clip: auto; margin: 0; padding: 10px 14px; z-index: 100; background: var(--accent); color: var(--on-accent); border-radius: 8px; font-weight: 600; }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
       /* Inline SVG icons for buttons */
     .btn .icon { width: 1.1em; height: 1.1em; flex: 0 0 auto; display: inline-block; }
     .btn svg { vertical-align: -0.15em; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
       /* Mobile menu */
-    .menu-toggle { display: none; border: 1px solid var(--border); background: #111827; color: var(--text); border-radius: 10px; height: 38px; width: 42px; align-items: center; justify-content: center; }
-    .menu-toggle:hover { background: #0b1220; }
+    .menu-toggle { display: none; border: 1px solid var(--border); background: var(--panel-2); color: var(--text); border-radius: 10px; height: 38px; width: 42px; align-items: center; justify-content: center; }
+    .menu-toggle:hover { background: var(--panel-3); }
     .brand a { color: inherit; text-decoration: none; }
 
     @media (max-width: 819px) {
@@ -110,14 +155,14 @@
       nav.menu.open { display: block; }
       nav.menu ul { display: grid; gap: 4px; list-style: none; margin: 0; padding: 6px; }
       nav.menu a { display: block; padding: 10px 12px; border-radius: 8px; }
-      nav.menu a:hover { background: rgba(255,255,255,0.06); text-decoration: none; }
+      nav.menu a:hover { background: var(--hover); text-decoration: none; }
       /* collapse inline layout */
       header .nav ul { gap: 0; }
     }
   </style>
 </head>
 <body>
-  <a href="#main" class="visually-hidden">Skip to content</a>
+  <a href="#main" class="visually-hidden skip-link">Skip to content</a>
   <header>
     <div class="wrap nav">
       <div class="brand"><a href="#about">David P. Bauer</a></div>
@@ -141,9 +186,9 @@
     <section class="hero" id="about" aria-label="About">
       <div class="hero-head">
         <div>
-          <p class="eyebrow">Higher‑Education Technology Leader</p>
-          <h1>Driving institutional change at the intersection of academic strategy, operations, and emerging technologies.</h1>
-          <p class="tagline">Senior Director of Academic Technologies at the University of Dayton. Focused on governance, cross‑functional leadership, and the responsible adoption of AI and other emerging tech to improve teaching, learning, and service delivery.</p>
+          <p class="eyebrow">Higher‑Education Technology Executive</p>
+          <h1>Building institutional capability at the intersection of academic strategy, research, and emerging technology.</h1>
+          <p class="tagline">Executive Director of Academic, Research, and Emerging Technologies at the University of Dayton. I build capability and then govern it, across academic and research systems, learning and classroom technologies, and a dedicated AI practice. Member of the Apereo Foundation Board of Directors.</p>
           <div class="actions">
         <a class="btn primary" href="https://www.linkedin.com/in/davidpbauer" target="_blank" rel="noopener" aria-label="LinkedIn profile">
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17l10-10M10 7h7v7"/></svg>
@@ -156,7 +201,7 @@
       </div>
         </div>
         <div class="profile-pic">
-          <img src="profile.jpg" sizes="160px" alt="Portrait of David P. Bauer" width="160" height="160" loading="eager" />
+          <img src="profile-320.jpg" srcset="profile-320.jpg 320w, profile-640.jpg 640w" sizes="160px" alt="Portrait of David P. Bauer" width="320" height="320" loading="eager" decoding="async" />
         </div>
       </div>
     </section>
@@ -167,17 +212,33 @@
         <article class="card xp" aria-labelledby="xp-ud">
           <h3 id="xp-ud" class="subtle">University of Dayton — UDit (Information Technologies)</h3>
           <div class="role">
-            <h3>Senior Director of Academic Technologies</h3>
-            <div class="meta">Oct 2024 – Present • Dayton, OH</div>
+            <h4>Executive Director of Academic, Research, and Emerging Technologies</h4>
+            <div class="meta">May 2026 – Present • Dayton, OH</div>
             <ul class="bullets">
-              <li>Lead a multi‑unit academic technologies organization (Academic Systems & Support; Development & UX; Learning Technologies; Classroom Technologies; AI Applications & Services).</li>
-              <li>Chair governance for emerging tech (AI/VR/AR) aligned to mission, ethics, accessibility, and policy.</li>
-              <li>Steward product ownership for core academic platforms and integrations; drive strategy, budget, analytics, and continuous improvement.</li>
+              <li>Lead the teams responsible for how the University discovers, adopts, and sustains technology across teaching, learning, and research: academic systems and integrations, academic research technologies, learning and classroom technologies, development and UX, and AI applications and services. 16 positions across three management units, supporting 8,900 students, 819 instructors, and over 2,600 course sections per term.</li>
+              <li>Consolidated the University&rsquo;s academic technology functions into a single organization after making the case that four separately managed units could not deliver a coherent academic technology strategy.</li>
+              <li>Built the AI Applications &amp; Services team and direct a portfolio of 63 initiatives with 13 agents in production, integrated with Canvas, Zoom, Google Workspace, Salesforce, TeamDynamix, and on&#8209;premise data warehouses across academic and administrative operations.</li>
+              <li>Quantified the funding gap in the University&rsquo;s classroom technology portfolio across 570 instructional spaces and built the eight&#8209;year model to close it, standardizing four nationally recognized space classifications and a funding model for each.</li>
+              <li>Direct the academic research technology portfolio: research computing and hybrid HPC capacity, grants management and post&#8209;award systems, and cost&#8209;recovery models for shared research infrastructure.</li>
+              <li>Established PILOT (Platform for Innovation Leveraging Open Technology), a student innovation studio placing undergraduates on applied emerging&#8209;technology projects.</li>
             </ul>
           </div>
           <div class="role">
-            <h3>Director, Online Learning Technology & Strategic Initiatives</h3>
+            <h4>Senior Director of Academic Technologies</h4>
+            <div class="meta">Oct 2024 – May 2026</div>
+            <ul class="bullets">
+              <li>Launched FlyerGPT, the University&rsquo;s institutional AI platform, and established the campus AI governance framework, moving AI from isolated experimentation to governed, mission&#8209;aligned adoption within a single academic year.</li>
+              <li>Designed and built the AI Applications &amp; Services team, defining every role on it and hiring its founding members.</li>
+              <li>Migrated the enterprise video platform to Kaltura on schedule for Fall 2025, reducing annual cost while expanding functionality.</li>
+              <li>Built the academic technologies financial model for classroom lifecycle refresh, giving the academic division a predictable multi&#8209;year basis for capital planning where none existed.</li>
+            </ul>
+          </div>
+          <div class="role">
+            <h4>Director, Online Learning Technology &amp; Strategic Initiatives</h4>
             <div class="meta">Jul 2021 – Oct 2024</div>
+            <ul class="bullets">
+              <li>Co&#8209;authored the recommendation to replace the University&rsquo;s enterprise LMS, then led the technology side of a phased two&#8209;year transition through to decommissioning the legacy platform in Fall 2025.</li>
+            </ul>
           </div>
           <div class="role"><div class="meta">Assistant Director, eLearning (2020–2021) • Team Lead, eLearning Systems & Support (2018–2020) • Team Lead, E‑Learning Web Dev (2016–2018) • Senior Web Developer (2015–2016) • Web Developer (2012–2015) • IT Intern (2009–2012)</div></div>
         </article>
@@ -187,31 +248,51 @@
     <section id="expertise" aria-label="Areas of Expertise">
       <h2>Areas of Expertise</h2>
       <ul class="inline">
-        <li>Organizational Change & Governance</li>
+        <li>Organizational Change &amp; Governance</li>
         <li>Enterprise Academic Technologies</li>
+        <li>AI Strategy, Platforms &amp; Governance</li>
+        <li>Academic Research Technologies (research computing, hybrid HPC)</li>
+        <li>Enterprise LMS &amp; Standards&#8209;Based Integration</li>
+        <li>Classroom &amp; AV Lifecycle Planning</li>
+        <li>Financial Modeling &amp; Capital Planning</li>
         <li>Emerging Tech (AI/VR/AR)</li>
-        <li>Digital Strategy & Roadmapping</li>
-        <li>Learning Platforms (LMS, synchronous/video)</li>
-        <li>Cross‑functional Leadership</li>
-        <li>Faculty Development & Support Systems</li>
+        <li>Cross&#8209;functional Leadership</li>
         <li>Product Ownership</li>
-        <li>Cloud & Integrations</li>
-        <li>Student Success Enablement</li>
-        <li>Policy & Responsible AI</li>
-        <li>Data‑informed Decision Making</li>
+        <li>Open Source Strategy &amp; Community Governance</li>
+        <li>Data&#8209;informed Decision Making</li>
       </ul>
     </section>
 
     <section id="leadership" aria-label="Leadership and Service">
-      <h2>Leadership & Service</h2>
-      <div class="card">
-        <p class="subtle">Chair/Lead — AI Oversight Committee & Academic Project Governance (UDit); cross‑campus partnerships with the Learning Teaching Center (LTC), Center for Online Learning (COL), and CCDI to align guidelines and adoption for academic technologies and AI.</p>
+      <h2>Leadership &amp; Service</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <p class="eyebrow">Professional</p>
+          <ul class="bullets">
+            <li><strong>Board of Directors, Apereo Foundation</strong> (2026–2029), Organizational Member seat.</li>
+            <li><strong>Vice Chair, MuLTItool Forge</strong>, an Apereo community building curated, LMS&#8209;agnostic learning tools to 1EdTech LTI standards. Founding contributor.</li>
+            <li><strong>EDUCAUSE Executive Leaders Academy</strong>, 2026–2027 cohort.</li>
+            <li><strong>Apereo and Sakai communities</strong> since 2012, including Sakai Project Management Committee service.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <p class="eyebrow">University Governance</p>
+          <ul class="bullets">
+            <li><strong>Co&#8209;Chair, Academics IT Portfolio Oversight</strong>, with the Associate Provost for Academic Affairs and Learning Initiatives.</li>
+            <li><strong>Co&#8209;Chair, AI Oversight Committee</strong>, with Internal Audit.</li>
+            <li><strong>AI Steering Committee</strong>, co&#8209;led by the CIO and the Dean of Libraries.</li>
+            <li>Enterprise Architecture; Academic Resource Governance; IT Change Advisory Board; Flight Crew Steering Committee.</li>
+          </ul>
+        </div>
       </div>
     </section>
 
     <section id="talks" aria-label="Talks and Presentations">
       <h2>Talks & Presentations</h2>
       <div class="grid cols-2">
+        <div class="card">
+          <strong>Panelist</strong> — &ldquo;MuLTItool Forge: Building Apps to Fill LMS Gaps,&rdquo; Sakai Virtual Conference, <span class="subtle">2026</span>
+        </div>
         <div class="card">
           <strong>Keynote Panelist</strong> — “AI & Innovation at the Brickyard” (IndyCar Kickoff with Workday, Accenture, AWS), <span class="subtle">May 9, 2025</span>
         </div>
@@ -236,7 +317,7 @@
         </div>
         <div class="card">
           <strong>Certifications</strong><br/>
-          Professional Scrum Product Owner I (2017) • Professional Scrum Master I (2014)
+          ITIL 4 Foundation, IT Service Management (PeopleCert, 2025) • Professional Scrum Product Owner I (2017) • Professional Scrum Master I (2014) • Leadership UD Graduate (2018)
         </div>
       </div>
     </section>
@@ -250,16 +331,18 @@
 
     <section id="contact" aria-label="Contact">
       <h2>Contact</h2>
-      <div class="grid cols-2">
-        <div class="card"><strong>Location</strong><br/>Dayton, OH</div>
+      <div class="grid cols-3">
+        <div class="card"><strong>Email</strong><br/><a href="mailto:david@davidpbauer.com">david@davidpbauer.com</a></div>
         <div class="card"><strong>LinkedIn</strong><br/><a href="https://www.linkedin.com/in/davidpbauer" target="_blank" rel="noopener">linkedin.com/in/davidpbauer</a></div>
+        <div class="card"><strong>GitHub</strong><br/><a href="https://github.com/davidpbauer" target="_blank" rel="noopener">github.com/davidpbauer</a></div>
       </div>
+      <p class="subtle" style="margin-top:14px">Dayton, Ohio • Eastern time</p>
     </section>
   </main>
 
   <footer>
     <div class="wrap">
-        <small>© <span id="y"></span> David P. Bauer • AI-assisted by <a href="https://chat.openai.com" target="_blank" rel="noopener">ChatGPT</a> (GPT-5 Thinking) • Built with semantic HTML & a few lines of CSS • <a href="#about">Back to top</a></small>
+        <small>© <span id="y"></span> David P. Bauer • Written with AI assistance • Built with semantic HTML &amp; a few lines of CSS • Updated September 2026 • <a href="#about">Back to top</a></small>
     </div>
   </footer>
 
@@ -267,23 +350,6 @@
     // set year without dependencies
     document.getElementById('y').textContent = new Date().getFullYear();
     </script>
-
-  <script>
-    // Prevent pixelation by avoiding upscale beyond the image's native resolution and device pixel ratio
-    window.addEventListener('load', () => {
-      const img = document.querySelector('.avatar');
-      if (!img) return;
-      const dpr = Math.max(1, window.devicePixelRatio || 1);
-      const natural = img.naturalWidth; // assuming square
-      const target = parseInt(getComputedStyle(img).getPropertyValue('--avatar-size')) || 160;
-      const maxDisplay = Math.floor(natural / dpr);
-      if (natural && maxDisplay && target > maxDisplay) {
-        img.style.width = maxDisplay + 'px';
-        img.style.height = maxDisplay + 'px';
-        img.title = 'Adjusted to native size for clarity';
-      }
-    });
-  </script>
 
   <script>
     // Accessible mobile menu toggle
@@ -312,10 +378,15 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "David P. Bauer",
-    "jobTitle": "Senior Director of Academic Technologies",
+    "jobTitle": "Executive Director of Academic, Research, and Emerging Technologies",
+    "worksFor": {"@type": "CollegeOrUniversity", "name": "University of Dayton"},
     "url": "https://davidpbauer.com/",    "address": {"@type": "PostalAddress", "addressLocality": "Dayton", "addressRegion": "OH", "addressCountry": "US"},
-    "sameAs": ["https://www.linkedin.com/in/davidpbauer"],
-    "knowsAbout": ["Academic Technologies", "AI in Higher Education", "LMS", "Organizational Change", "Governance"]
+    "sameAs": ["https://www.linkedin.com/in/davidpbauer", "https://github.com/davidpbauer"],
+    "image": "https://davidpbauer.com/profile-640.jpg",
+    "email": "mailto:david@davidpbauer.com",
+    "alumniOf": {"@type": "CollegeOrUniversity", "name": "University of Dayton"},
+    "memberOf": {"@type": "Organization", "name": "Apereo Foundation", "url": "https://www.apereo.org/"},
+    "knowsAbout": ["Academic Technologies", "Academic Research Technologies", "AI in Higher Education", "AI Governance", "Learning Management Systems", "Open Source in Higher Education", "Organizational Change", "Governance"]
   }
   </script>
 </body>
